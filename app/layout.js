@@ -1,7 +1,12 @@
 import { Inter } from 'next/font/google'
+import { Barlow_Condensed } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+const barlow = Barlow_Condensed({ subsets: ["latin"], weight: "500" });
+const poppins = Poppins({ subsets: ["latin"], weight: "400" });
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
-  )
+  );
 }
