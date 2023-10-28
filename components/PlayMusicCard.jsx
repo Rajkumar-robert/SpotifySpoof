@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./AudioPlayer.module.css";
 import { BsArrowLeftShort } from "react-icons/bs";
@@ -6,7 +6,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const AudioPlayer = () => {
+const AudioPlayer = (props) => {
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -73,42 +73,69 @@ const AudioPlayer = () => {
   };
 
   return (
-    <div className={styles.audioPlayer}>
+    <div className="flex items-center h-[100px] w-[100vw] bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-md ">
       <audio
         ref={audioPlayer}
         src="https://cdn.simplecast.com/audio/cae8b0eb-d9a9-480d-a652-0defcbe047f4/episodes/af52a99b-88c0-4638-b120-d46e142d06d3/audio/500344fb-2e2b-48af-be86-af6ac341a6da/default_tc.mp3"
         preload="metadata"
       ></audio>
-      <button className={styles.forwardBackward} onClick={backThirty}>
-        <BsArrowLeftShort /> 30
-      </button>
-      <button onClick={togglePlayPause} className={styles.playPause}>
-        {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
-      </button>
-      <button className={styles.forwardBackward} onClick={forwardThirty}>
-        30 <BsArrowRightShort />
-      </button>
-
-      {/* current time */}
-      <div className={styles.currentTime}>{calculateTime(currentTime)}</div>
-
-      {/* progress bar */}
-      <div>
-        <input
-          type="range"
-          className={styles.progressBar}
-          defaultValue="0"
-          ref={progressBar}
-          onChange={changeRange}
-        />
+      <div className="flex items-center w-[250px] justify-around px-2">
+        <button
+          className="bg-white bg-opacity-50 rounded-md p-2 "
+          onClick={backThirty}
+        >
+          <img
+            width={39}
+            height={39}
+            src="https://img.icons8.com/plumpy/96/ffffff/skip-15-seconds-back--v2.png"
+            alt=""
+          />
+        </button>
+        <button onClick={togglePlayPause} className="bg-white rounded-full p-4">
+          {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
+        </button>
+        <button
+          className="bg-white bg-opacity-50 rounded-md p-2"
+          onClick={forwardThirty}
+        >
+          <img
+            width={39}
+            height={39}
+            src="https://img.icons8.com/plumpy/96/ffffff/skip-ahead-15-seconds.png"
+            alt="skip-ahead-15-seconds"
+          />
+        </button>
       </div>
 
-      {/* duration */}
-      <div className={styles.duration}>
-        {duration && !isNaN(duration) && calculateTime(duration)}
+      <div className="ml-5">
+        <img width={75} height={75} src="/shape.png" alt="" />
+      </div>
+      <div className="flex">
+        {/* current time */}
+        <div className={styles.currentTime}>{calculateTime(currentTime)}</div>
+
+        {/* progress bar */}
+        <div>
+          <input
+            type="range"
+            className={styles.progressBar}
+            defaultValue="0"
+            ref={progressBar}
+            onChange={changeRange}
+          />
+        </div>
+
+        {/* duration */}
+        <div className={styles.duration}>
+          {duration && !isNaN(duration) && calculateTime(duration)}
+        </div>
+      </div>
+
+      <div>
+        <img src="https://img.icons8.com/ios/50/high-volume--v2.png" alt="" />
       </div>
     </div>
   );
 };
 
-export default AudioPlayer ;
+export default AudioPlayer;

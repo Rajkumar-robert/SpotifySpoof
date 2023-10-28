@@ -57,30 +57,31 @@ const musicData = [
 
 const Home = () => {
   return (
-    <div className="flex flex-col">
-      <div className="flex">
-        <div className="fixed">
-          <Navbar />
-        </div>
-
-        <div className="absolute left-[250px] flex flex-col">
-          <div className="fixed z-10 bg-white">
-            <Toolbar />
+    <div>
+      <div className="flex flex-col">
+        <div className="flex">
+          <div className="fixed">
+            <Navbar />
           </div>
 
-          <div className="grid grid-cols-4 relative top-[100px]">
-            {musicData.map((music, index) => (
-              <MusicCard
-                key={index}
-                title={music.title}
-                imageUrl={music.imageUrl}
-              />
-            ))}
+          <div className="absolute left-[250px] flex flex-col">
+            <div className="fixed z-10 bg-white">
+              <Toolbar />
+            </div>
+
+            <div className="grid grid-cols-4 relative top-[100px]">
+              {musicData.map((music, index) => (
+                <MusicCard
+                  key={index}
+                  title={music.title}
+                  imageUrl={music.imageUrl}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-[0px]">
+      <div className="fixed bottom-0 ">
         <AudioPlayer />
       </div>
     </div>
