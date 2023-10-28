@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Toolbar from "@/components/Toolbar";
-import MusicCard from "@/components/MusicCard";
 import AudioPlayer from "@/components/PlayMusicCard";
+import PurchaseMusicCard from "@/components/PurchaseMusicCard";
 
 const musicData = [
   {
@@ -57,10 +57,17 @@ const musicData = [
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-4 relative top-[100px]">
-      {musicData.map((music, index) => (
-        <MusicCard key={index} title={music.title} imageUrl={music.imageUrl} />
-      ))}
+    <div className="flex flex-col relative top-[100px] w-[1300px]">
+      <p className="text-white text-6xl font-extrabold ml-10 mt-10">Purchased Songs & Albums</p>
+      <div className="grid grid-cols-3 ">
+        {musicData.map((music, index) => (
+          <PurchaseMusicCard
+            key={index}
+            title={music.title}
+            imageUrl={music.imageUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 };

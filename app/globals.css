@@ -4,6 +4,7 @@
 
 body{
   overflow-x: hidden;
+  background-color: #0c0c0c;
 }
 .menu-item{
   background-color: transparent;
