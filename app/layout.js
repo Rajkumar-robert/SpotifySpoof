@@ -2,6 +2,8 @@ import { Inter } from 'next/font/google'
 import { Barlow_Condensed } from 'next/font/google';
 import { Poppins } from 'next/font/google';
 import './globals.css'
+import Web3ModalProvider from "@/contexts/Web3ModalProvider";
+
 
 const inter = Inter({ subsets: ['latin'] })
 const barlow = Barlow_Condensed({ subsets: ["latin"], weight: "500" });
@@ -16,7 +18,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Web3ModalProvider>
+        {children}
+        </Web3ModalProvider>
+        </body>
     </html>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Toolbar from "@/components/Toolbar";
 import MusicCard from "@/components/MusicCard";
+import AudioPlayer from "@/components/PlayMusicCard";
 
 const musicData = [
   {
@@ -58,13 +59,16 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <div className="flex">
-        <Navbar />
-        <div className="flex flex-col">
-          <div>
+        <div className="fixed">
+          <Navbar />
+        </div>
+
+        <div className="absolute left-[250px] flex flex-col">
+          <div className="fixed z-10 bg-white">
             <Toolbar />
           </div>
 
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 relative top-[100px]">
             {musicData.map((music, index) => (
               <MusicCard
                 key={index}
@@ -76,7 +80,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div></div>
+      <div className="absolute bottom-[0px]">
+        <AudioPlayer />
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Toolbar = () => {
   }, [disconnect]);
 
   return (
-    <div className="flex justify-between items-center h-[100px]">
+    <div className="flex justify-between items-center h-[100px] w-[1270px]">
       <div className="flex justify-around items-center w-[600px] ">
         <div className="flex gap-[40px]">
           <img className="w-8 h-8" src="/left.png" alt="" />
@@ -32,14 +32,14 @@ const Toolbar = () => {
 
       <div className="flex justify-normal items-center">
         <img src="/menu.png" alt="" className="w-10 h-10 mr-10" />
-        {account ? (
-          <p className="font-bold tracking-wide">{ellipseAddress(account)}</p>
-        ) : (
-          <div>
+        <div className="mr-10">
+          {account ? (
+            <p className="font-bold tracking-wide">{ellipseAddress(account)}</p>
+          ) : (
             <button onClick={handleConnectWallet}>Connect Wallet</button>
-          </div>
-        )}
-        <p className="font-bold tracking-wide">{ellipseAddress(account)}</p>
+          )}
+        </div>
+
         {/* <img
           src="/stephen.jpg"
           alt=""

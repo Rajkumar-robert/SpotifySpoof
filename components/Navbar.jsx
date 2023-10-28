@@ -5,7 +5,7 @@ import { Web3ModalContext } from "@/contexts/Web3ModalProvider";
 const Navbar = () => {
 
   return (
-    <div className="flex flex-col h-[100vh] w-[250px] bg-gradient-to-b from-[#766A62] via-[#514D51] to-[#313D49] bg-opacity-60 backdrop-filter backdrop-blur-lg shadow-md px-4 text-white">
+    <div className="  flex flex-col h-[100vh] w-[250px] bg-gradient-to-b from-[#766A62] via-[#514D51] to-[#313D49] bg-opacity-60 backdrop-filter backdrop-blur-lg shadow-md px-4 text-white">
       <div className="mb-4 flex flex-col justify-center items-center mt-10">
         <img
           src="/einstein.jpeg"
@@ -17,16 +17,16 @@ const Navbar = () => {
 
       <div className="flex flex-col gap-[10px]">
         <MenuItem
-          icon="https://img.icons8.com/metro/26/ffffff/musical.png"
-          text="Featured"
+          icon="https://img.icons8.com/metro/26/ffffff/compass.png"
+          text="Explore"
         />
         <MenuItem
-          icon="https://img.icons8.com/metro/26/ffffff/musical.png"
-          text="Ranking"
+          icon="https://img.icons8.com/metro/26/ffffff/buy.png"
+          text="Purchased Songs"
         />
         <MenuItem
-          icon="https://img.icons8.com/metro/26/ffffff/musical.png"
-          text="Song List"
+          icon="https://img.icons8.com/metro/26/ffffff/plus.png"
+          text="WishList"
         />
         <MenuItem
           icon="https://img.icons8.com/metro/26/ffffff/musical.png"
@@ -39,9 +39,18 @@ const Navbar = () => {
       </div>
 
       <div className="mt-10 ">
-        <MenuItem icon="/collection-icon.png" text="Collection" />
-        <MenuItem icon="/download-icon.png" text="Download" />
-        <MenuItem icon="/history-icon.png" text="History" />
+        <MenuItem
+          icon="https://img.icons8.com/metro/26/ffffff/like.png"
+          text="Favorites"
+        />
+        <MenuItem
+          icon="https://img.icons8.com/metro/26/ffffff/download.png"
+          text="Downloads"
+        />
+        <MenuItem
+          icon="https://img.icons8.com/metro/26/ffffff/.png"
+          text="History"
+        />
       </div>
     </div>
   );
